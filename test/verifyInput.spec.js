@@ -1,6 +1,6 @@
 /*
 - You're not allowed to write production code unless 
-  it's to make a failing test pass
+  it's to make a failing test pass (zombie test)
 - You're only allowed to write the one test the will 
   make your production code fail
 - You're not allowed to write any more production code 
@@ -13,5 +13,5 @@ What was the expected output?
 
 */
 
-import verifyPass from '../src/password'
+import verifyInput from '../src/verifyInput'
 
