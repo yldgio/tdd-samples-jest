@@ -11,3 +11,7 @@
  * ])
  * **/
 
+export default function verifyInput(input, rules){
+    if(rules.length === 0){return true;}
+    return rules.every((rule)=>rule(input));
+}

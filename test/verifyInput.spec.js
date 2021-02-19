@@ -15,3 +15,30 @@ What was the expected output?
 
 import verifyInput from '../src/verifyInput'
 
+describe("verifyInput", ()=>{
+  it("should pass with no rules",()=> {
+    const actual = verifyInput("any value", []);
+    expect(actual).toBeTruthy();
+  });
+  it("should fail with one failng rule", ()=>{
+    const actual = verifyInput("any value", [
+      input=>false
+    ]);
+    expect(actual).toBeFalsy();
+  });
+  it("should pass with a passing rule", ()=>{
+    const actual = verifyInput("any value", [
+      input=>true
+    ]);
+    expect(actual).toBeTruthy();
+
+  });
+  it("fail with many rules some failing", ()=>{
+    const actual = verifyInput("any value", [
+      input=>true,
+      input=>false
+    ]);
+    expect(actual).toBeFalsy();
+
+  })
+})
