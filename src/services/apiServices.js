@@ -1,23 +1,18 @@
 import axios from 'axios'
 
-
-export const axiosService = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/',
-    timeout: 2000,
-    headers: {'X-Custom-Header': 'foobar'}
-});
+axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com/';
 
 
 export const userService = {
-    list: ()=> axiosService.get('/users'),
-    get: (id)=> axiosService.get(`/users/${id}`)
+    list: ()=> axios.get('/users'),
+    get: (id)=> axios.get(`${BASE_URL}/users/${id}`)
 };
 
 export const postsService = {
-    list: ()=> axiosService.get('/posts'),
-    get: (id)=> axiosService.get(`/posts/${id}`),
-    listByUser: (userId)=> axiosService.get(`/users/${userId}/posts`),
-    getByUser: (userId, id)=> axiosService.get(`/users/${userId}/posts/${id}`)
+    list: ()=> axios.get('/posts'),
+    get: (id)=> axios.get(`/posts/${id}`),
+    listByUser: (userId)=> axios.get(`/users/${userId}/posts`),
+    getByUser: (userId, id)=> axios.get(`/users/${userId}/posts/${id}`)
 
 };
 
