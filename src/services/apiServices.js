@@ -5,7 +5,7 @@ axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com/';
 
 export const userService = {
     list: ()=> axios.get('/users'),
-    get: (id)=> axios.get(`${BASE_URL}/users/${id}`)
+    get: (id)=> axios.get(`/users/${id}`)
 };
 
 export const postsService = {

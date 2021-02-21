@@ -64,7 +64,7 @@ export const sampleUserResponse = {
 };
 
 export const postsResponse = {
-    1:{data:
+    '1':{data:
         [
             {
               "userId": 1,
@@ -92,7 +92,7 @@ export const postsResponse = {
             }
         ]
     },
-    2:{data:
+    '2':{data:
         [
             {
               "userId": 2,
@@ -133,6 +133,6 @@ export const fakePostsService = {
     list: ()=> Promise.resolve(emptyResponse),
     get: (id)=> Promise.resolve(emptyResponse),
     listByUser: (userId)=> Promise.resolve(postsResponse[userId]),
-    getByUser: (userId, id)=> Promise.resolve(wrapData(postsResponse[userId].data.find(el=>el.id===id)))
+    getByUser: (userId, id)=> Promise.resolve(wrapData(postsResponse[`${userId}`].data.find(el=>el.id===id)))
 
 };
