@@ -17,7 +17,11 @@ export default async function demoAction(howManyUsers, howManyPosts){
             };
     }));
     /*
-    do posts & other stuff with output
+    task:
+    - find all post with some special value
+    - do POST those posts to another service
+    - post notification to a 3rd service
+
     */
     return output;
 };
